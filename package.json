@@ -1,0 +1,29 @@
+{
+  "name": "iowalight-web-experience",
+  "version": "1.0.0",
+  "description": "Rebuild of iowalight.com.",
+  "main": "index.js",
+  "repository": "git@github.com:riojack/iowalight-web-experience.git",
+  "author": "riojack",
+  "license": "MIT",
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "scripts": {
+    "prebuild": "flow check",
+    "build": "webpack --config ./toolconfig/webpack.config.js",
+    "pretest": "flow check",
+    "test": "jest test/"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^7.1.5",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.83.0",
+    "jest": "^23.6.0",
+    "react": "^16.6.0",
+    "webpack": "^4.22.0",
+    "webpack-cli": "^3.1.2"
+  }
+}
