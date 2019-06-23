@@ -10,11 +10,26 @@
     "flowtype",
     "jest"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "parserOptions": {
     "ecmaVersion": 8
   },
   "env": {
     "jest/globals": true
   },
-  "rules": {}
+  "rules": {
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "no-tabs": "error",
+    "indent": ["error", 2]
+  }
 }

@@ -12,6 +12,7 @@
   "scripts": {
     "prebuild": "flow check",
     "build": "webpack --config ./config/webpack.config.js",
+    "lint": "eslint src/ test/",
     "pretest": "flow check",
     "test": "jest test/"
   },
