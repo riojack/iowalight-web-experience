@@ -25,6 +25,8 @@ describe('Photo functional component', () => {
   });
 
   test('should set the <img /> src attribute to props.source', () => {
-    expect(component.props.src).toBe(props.source);
+    const { src } = component.props;
+
+    expect(src).toBe(props.source);
   });
 });
