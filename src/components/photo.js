@@ -1,9 +1,9 @@
+// @flow
+
 import React from 'react';
 
-type PhotoProps = {
-
+export type PhotoProps = {
+  source: string
 };
 
-const Photo = (props: PhotoProps) => <img />;
-
-export { Photo };
+export const Photo = (props: PhotoProps) => <img src={props.source} />;
