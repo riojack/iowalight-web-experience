@@ -30,6 +30,19 @@
       }
     ],
     "no-tabs": "error",
-    "indent": ["error", 2]
-  }
+    "indent": [
+      "error",
+      2
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "index.js"
+      ],
+      "rules": {
+        "no-unused-vars": "off"
+      }
+    }
+  ]
 }
