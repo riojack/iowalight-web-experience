@@ -1,15 +1,20 @@
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const mode = 'development';
 
 module.exports = {
-  mode: 'production',
+  mode: mode,
   devtool: 'inline-source-map',
   entry: './index.js',
-  externals: { react: 'React' },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM'
+  },
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].bundle.js',
-    sourcePrefix: ''
+    sourcePrefix: '',
+    publicPath: '/dist/'
   },
   optimization: {
     minimizer: [new UglifyJsPlugin({
@@ -17,7 +22,7 @@ module.exports = {
       uglifyOptions: {
         minimize: true,
         output: {
-          comments: false,
+          comments: mode === 'development',
         },
       },
     })],
