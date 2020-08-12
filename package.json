@@ -2,7 +2,7 @@
   "name": "iowalight-web-experience",
   "version": "1.0.0",
   "description": "Rebuild of iowalight.com.",
-  "main": "index.js",
+  "main": "index.tsx",
   "repository": "git@github.com:riojack/iowalight-web-experience.git",
   "author": "riojack",
   "license": "MIT",
