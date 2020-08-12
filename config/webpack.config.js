@@ -1,13 +1,14 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
 const mode = 'development';
 
 module.exports = {
   mode: mode,
-  devtool: 'inline-source-map',
+  devtool: mode === 'development' ? 'inline-source-map' : false,
   entry: './index.tsx',
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js', '.jsx' ],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   externals: {
     react: 'React',
@@ -20,14 +21,13 @@ module.exports = {
     publicPath: '/dist/'
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin({
-      parallel: true,
-      uglifyOptions: {
-        minimize: true,
+    minimizer: [new TerserPlugin({
+      terserOptions: {
         output: {
-          comments: mode === 'development',
+          comments: false,
         },
       },
+      extractComments: false
     })],
   },
   module: {

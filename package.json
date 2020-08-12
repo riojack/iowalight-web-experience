@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "webpack --config ./config/webpack.config.js",
+    "build:prod": "webpack --config ./config/webpack.config.js",
     "lint": "eslint src/ test/",
     "test": "jest test/",
     "serve": "webpack-dev-server --config ./config/webpack.config.js --content-base build/"
@@ -27,9 +28,9 @@
     "jest": "^26.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "terser-webpack-plugin": "^4.1.0",
     "ts-loader": "^8.0.2",
     "typescript": "^3.9.7",
-    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }
