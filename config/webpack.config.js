@@ -5,7 +5,10 @@ const mode = 'development';
 module.exports = {
   mode: mode,
   devtool: 'inline-source-map',
-  entry: './index.js',
+  entry: './index.tsx',
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js', '.jsx' ],
+  },
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM'
@@ -29,7 +32,11 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
-    ]
-  }
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
+  },
 };
