@@ -8,11 +8,7 @@ module.exports = {
   devtool: mode === 'development' ? 'inline-source-map' : false,
   entry: './index.tsx',
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
-  },
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM'
+    extensions: ['.tsx', '.ts', '.js', '.jsx']
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -21,10 +17,13 @@ module.exports = {
     publicPath: '/dist/'
   },
   optimization: {
+    splitChunks: {
+      chunks: 'all'
+    },
     minimizer: [new TerserPlugin({
       terserOptions: {
         output: {
-          comments: false,
+          comments: false
         },
       },
       extractComments: false
@@ -35,8 +34,8 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
+        exclude: /node_modules/
+      }
+    ]
+  }
 };
