@@ -8,7 +8,11 @@ module.exports = {
   devtool: mode === 'development' ? 'inline-source-map' : false,
   entry: './index.tsx',
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx']
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    alias: {
+      'react': 'preact/compat',
+      'react-dom': 'preact/compat'
+    }
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -18,7 +22,8 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: 'all'
+      chunks: 'all',
+      minSize: 512
     },
     minimizer: [new TerserPlugin({
       terserOptions: {
