@@ -1,6 +1,5 @@
 import React from 'react';
-import { Photo } from '../../../src/components/photo';
-import { PhotoProps } from '../../../src/components/photo';
+import { Photo, PhotoProps } from '../../../src/components/photo';
 import { render } from '@testing-library/preact';
 
 describe('Photo functional component', () => {

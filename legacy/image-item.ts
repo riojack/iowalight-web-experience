@@ -1,10 +1,9 @@
-// eslint-disable-next-line no-unused-vars
 interface ImageItem {
-  name: String;
-  image: String;
-  backgroundUrl: String;
-  backgroundPosition: {x: Number, y: number};
-  height: Number;
-  width: Number;
-  tags: String[];
+  name: string;
+  image: string;
+  backgroundUrl: string;
+  backgroundPosition: { x: number, y: number };
+  height: number;
+  width: number;
+  tags: string[];
 }

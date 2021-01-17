@@ -1,8 +1,7 @@
-/* eslint-disable no-unused-vars */
 interface Collection {
-  collection: String;
-  added: String;
-  updated: String;
-  time: Number;
+  collection: string;
+  added: string;
+  updated: string;
+  time: number;
   items: ImageItem[];
 }

@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
 interface Group {
-  group: String;
+  group: string;
   collections: Collection[]
 }
