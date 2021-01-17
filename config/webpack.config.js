@@ -1,11 +1,9 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const mode = 'development';
+const mode = 'production';
 
 module.exports = {
-  mode: mode,
-  devtool: mode === 'development' ? 'inline-source-map' : false,
   entry: './index.tsx',
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
@@ -23,7 +21,14 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: 'all',
-      minSize: 512
+      minSize: 512,
+      cacheGroups: {
+        defaultVendors: {
+          name() {
+            return 'vendors';
+          }
+        }
+      }
     },
     minimizer: [new TerserPlugin({
       terserOptions: {
