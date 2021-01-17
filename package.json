@@ -14,7 +14,7 @@
     "build:prod": "webpack --config ./config/webpack.prod.js",
     "lint": "eslint src/ test/",
     "test": "jest test/",
-    "serve": "webpack-dev-server --config ./config/webpack.dev.js"
+    "serve": "webpack serve --config ./config/webpack.dev.js"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -24,6 +24,7 @@
     "@testing-library/preact": "^2.0.1",
     "@types/jest": "^26.0.20",
     "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
     "babel-jest": "^26.6.3",
@@ -39,5 +40,9 @@
     "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3"
+  },
+  "resolutions": {
+    "webpack-dev-server/chokidar": "^3.0.0",
+    "babel-jest/@jest/transform/jest-haste-map/sane/micromatch/snapdragon/source-map-resolve": "^0.6.0"
   }
 }
