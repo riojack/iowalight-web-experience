@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-export type PhotoProps = {
-  source: string
-};
+export type PhotoProps = { source: string };
 
-export const Photo: React.FunctionComponent<PhotoProps> = (props: PhotoProps) => (<div><img src={props.source} alt="Thumbnail" /></div>);
+export const Photo: FC<PhotoProps> = (props: PhotoProps) => (<div><img src={props.source} alt="Thumbnail" /></div>);
